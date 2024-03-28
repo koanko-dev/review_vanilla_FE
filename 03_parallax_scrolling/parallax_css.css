@@ -1,0 +1,33 @@
+/* 부모 요소에 perspective 속성 적용 */
+#parallax-wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  perspective: 1px; /* 해당 요소가 z축으로 1px만큼 멀어짐. 값이 클수록 변형효과가 적고, 작아질수록 변형효과가 큼 */
+}
+
+/* 자식 요소를 absolute로 만들고  */
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#parallax-A {
+  background-color: red;
+  height: 150rem;
+}
+
+/* transform 속성 translateZ로 거리 조절 */
+#parallax-B {
+  background-color: aqua;
+  height: 500px;
+  transform: translateZ(-2px); /* 멀리 있는 요소일수록 - 사용 */
+}
+
+#parallax-C {
+  top: 500px;
+  background-color: blueviolet;
+  height: 500px;
+  transform: translateZ(-1px); /* 더 가까이 있는 요소가 빨리 움직임 */
+}
